@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="nl">
+	<head>
+		<meta charset="UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+		<title>SpaceXClock</title>
+		<link type="text/css" href="styles/style.css" rel="stylesheet"/>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bebas+Neue">
+		<script src="https://api.mapbox.com/mapbox-gl-js/v1.9.0/mapbox-gl.js"></script>
+    	<link href="https://api.mapbox.com/mapbox-gl-js/v1.9.0/mapbox-gl.css" rel="stylesheet" />
+		<script type="text/javascript" src="scripts/scripts.js" defer></script> 
+		
+	</head>
+	<body>
+		<img class="background" src="images/night.png">
+		<div class="flex-logo">
+  			<figure>
+  				<img class="spacexlogo" src="images/spacexLogo.png">
+  			</figure>
+  		</div>
+  		<h1 class="heading">Sven's Space Travel Agency</h1>
+		<div class="flex-container">
+	
+		<div class="landingbox">
+			<h2 class="heading">Landingplaatsen</h2>
+  		 	<button class="landingsplaats_button" id="knop1">Landingplaats 1</button>
+  		 	<button class="landingsplaats_button" id="knop2">Landingplaats 2</button>
+  		 	<button class="landingsplaats_button" id="knop3">Landingplaats 3</button>
+		</div>
+
+		<div class="mapbox">
+  			<div id="map"></div>
+ 		</div>
+  	
+  		<div class="weatherbox">
+  			<h2 class="heading">Weer op landingsplaats</h2> 
+  			<div id="weather"></div>	 
+  		</div> 
+		</div>
+	</body>
+</html>
