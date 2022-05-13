@@ -97,9 +97,7 @@ fetch(request)
 return responseWeather.json();
 })
 
-// do something with response
 .then(function(responseWeather) {
-// show full JSON object
 var weatherBox = document.getElementById('weather');
 var degC = Math.floor(responseWeather.main.temp - 273.15);
 weatherBox.innerHTML = degC + '&#176;C <br><img src="https://openweathermap.org/img/wn/' + responseWeather.weather[0].icon + '@2x.png"><br>' +  responseWeather.weather[0].description;
@@ -109,17 +107,13 @@ weatherBox.innerHTML = degC + '&#176;C <br><img src="https://openweathermap.org/
 function getWeatherplaats2 () {
 
 var request = 'https://api.openweathermap.org/data/2.5/weather?lat=' + loungePad2[1] + '&lon=' + loungePad2[0] + '&appid=0390daa8a38c5a1e9f2ff77491c72abc'
-// Haal het weer op, doordat de LngLat in een variable staat kan ik deze hier gebruiken
 fetch(request)
 
-// parse response to JSON format
 .then(function(responseWeather) {
 return responseWeather.json();
 })
 
-// do something with response
 .then(function(responseWeather) {
-// show full JSON object
 var weatherBox = document.getElementById('weather');
 var degC = Math.floor(responseWeather.main.temp - 273.15);
 weatherBox.innerHTML = degC + '&#176;C <br><img src="https://openweathermap.org/img/wn/' + responseWeather.weather[0].icon + '@2x.png"><br>' +  responseWeather.weather[0].description;
@@ -129,17 +123,13 @@ weatherBox.innerHTML = degC + '&#176;C <br><img src="https://openweathermap.org/
 function getWeatherplaats3 () {
 
 var request = 'https://api.openweathermap.org/data/2.5/weather?lat=' + loungePad3[1] + '&lon=' + loungePad3[0] + '&appid=0390daa8a38c5a1e9f2ff77491c72abc'
-// Haal het weer op, doordat de LngLat in een variable staat kan ik deze hier gebruiken
 fetch(request)
 
-// parse response to JSON format
 .then(function(responseWeather) {
 return responseWeather.json();
 })
 
-// do something with response
 .then(function(responseWeather) {
-// show full JSON object
 var weatherBox = document.getElementById('weather');
 var degC = Math.floor(responseWeather.main.temp - 273.15);
 weatherBox.innerHTML = degC + '&#176;C <br><img src="https://openweathermap.org/img/wn/' + responseWeather.weather[0].icon + '@2x.png"><br>' +  responseWeather.weather[0].description;
@@ -147,20 +137,16 @@ weatherBox.innerHTML = degC + '&#176;C <br><img src="https://openweathermap.org/
 };
 
 function getWeather () {
-
 var request = 'https://api.openweathermap.org/data/2.5/weather?lat=' + center[1] + '&lon=' + center[0] + '&appid=0390daa8a38c5a1e9f2ff77491c72abc'
-// Haal het weer op, doordat de LngLat in een variable staat kan ik deze hier gebruiken. Hier haal ik het weer op van het midden van de kaart.
-// in dit geval is dat het midden van de Golf van Mexico. Hierdoor heb ik altijd gegevens om het weer mee te vullen (aangezien de andere pas na een onclick worden uitgevoerd)
 fetch(request)
 
-// parse response to JSON format
+
 .then(function(responseWeather) {
 return responseWeather.json();
 })
 
-// do something with response
+
 .then(function(responseWeather) {
-// show full JSON object
 var weatherBox = document.getElementById('weather');
 var degC = Math.floor(responseWeather.main.temp - 273.15);
 weatherBox.innerHTML = degC + '&#176;C <br><img src="https://openweathermap.org/img/wn/' + responseWeather.weather[0].icon + '@2x.png"><br>' +  responseWeather.weather[0].description;
