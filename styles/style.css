@@ -32,14 +32,14 @@
 	
 	.heading {
 		text-align: center;
-		font-size: 23px;
+		font-size: 24px;
 	}
 	
 	
 	.flex-container {
 	  display: flex;
 	  flex-direction: column; 
-	  font-size: 30px;
+	  font-size: 32px;
 	  flex-wrap: wrap;
 	  text-align: center;
 	}
@@ -55,11 +55,11 @@
 		background-color:#ffffff;
 		color: #060024;
 		font-family: 'poppins';
-		font-weight: 400;
+		font-weight: 420;
 		font-style: normal;
 		border: white 1px solid;
 		padding: 10px;
-		font-size: 17px;
+		font-size: 18px;
 		margin: 5px;
 	}
 	
@@ -88,7 +88,7 @@
 @media only screen and (min-width: 600px){
 	.flex-container {
 		display: flex;
-		font-size: 30px;
+		font-size: 32px;
 		text-align: center;
 		flex-direction: row;
 	  }
@@ -107,7 +107,7 @@
 	   
 	   .heading {
 		  text-align: center;
-		  font-size: 28px;
+		  font-size: 30px;
 	  }
 	  
 	  #map {
@@ -142,7 +142,7 @@
 	  
 	   .heading {
 		  text-align: center;
-		  font-size: 34px;
+		  font-size: 36px;
 	  }
 	  
 		}
