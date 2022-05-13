@@ -1,17 +1,12 @@
-// Api key voor Mapbox
 mapboxgl.accessToken = 'pk.eyJ1Ijoic3ZlbmtlcnNiZXJnZW4iLCJhIjoiY2wxbWI5ZmdiMGlrczNwbzMzbm4wenFmNyJ9.zVdvr_b4j8uyxeKb-HinDw';
 
-// Api key voor openWeatherMap
 var openWeatherMapUrl = 'https://api.openweathermap.org/data/2.5/weather';
 var openWeatherMapUrlApiKey = '9efa578c2fa6083cd559fa2801b0824b';
-var center = [4.325, 52.081]; //Midden van de map in een variable gezet voor het gemak
+var center = [4.325, 52.081];
 
-// Map aanmaken 
 var map = new mapboxgl.Map({
   container: 'map',
   style: 'mapbox://styles/mapbox/satellite-streets-v11',
-
-  // Positioning the map on a certain longitute + latitude and zooming in
   center: center,
   zoom: 3.5,
 });
@@ -24,11 +19,10 @@ var popup = new mapboxgl.Popup().setHTML('<h3 class="popuptext">Landingplaats #1
 var popup2 = new mapboxgl.Popup().setHTML('<h3 class="popuptext">Landingplaats #2</h3>');
 var popup3 = new mapboxgl.Popup().setHTML('<h3 class="popuptext">Landingplaats #3</h3>');
 
-var loungePad1 = [-97.15, 25.99]; //LngLat van de landingplaats in variablen gezet hierdoor kan ik ze ook gebruiken om het weer op te halen
+var loungePad1 = [-97.15, 25.99];
 var loungePad2 = [4.325, 52.081];  
 var loungePad3 = [-80.15, 25.75];
 
-// Marker toevoegen op de map voor iedere landingplaats
 var marker = new mapboxgl.Marker({
 	color: "purple"})
   .setLngLat(loungePad1)
@@ -47,14 +41,12 @@ var marker2 = new mapboxgl.Marker({
   .setPopup(popup3)
   .addTo(map);
 
-//------------Onclicks voor de knoppen
-
 document.getElementById('knop1').onclick = function() {
 map.flyTo({
 center: loungePad1,
 speed: 1,
 zoom: 10,
-essential: true // this animation is considered essential with respect to prefers-reduced-motion
+essential: true
 });
 
 getWeatherplaats1();
@@ -66,7 +58,7 @@ map.flyTo({
 center: loungePad2,
 speed: 1,
 zoom: 10,
-essential: true // this animation is considered essential with respect to prefers-reduced-motion
+essential: true
 });
 
 getWeatherplaats2();
@@ -78,21 +70,18 @@ map.flyTo({
 center: loungePad3,
 speed: 1,
 zoom: 10,
-essential: true // this animation is considered essential with respect to prefers-reduced-motion
+essential: true 
 });
 
 getWeatherplaats3();
 
 };
 
-// Weathermap -- per plaats heb ik een function aangemaakt om voor die locatie het weer op te halen, deze functie wordt uitgevoerd bij een onclick
 function getWeatherplaats1 () {
 
 var request = 'https://api.openweathermap.org/data/2.5/weather?lat=' + loungePad1[1] + '&lon=' + loungePad1[0] + '&appid=0390daa8a38c5a1e9f2ff77491c72abc'
-// Haal het weer op, doordat de LngLat in een variable staat kan ik deze hier gebruiken
 fetch(request)
 
-// parse response to JSON format
 .then(function(responseWeather) {
 return responseWeather.json();
 })
