@@ -1,7 +1,10 @@
+// Api key voor de (Mapbox) kaart
 mapboxgl.accessToken = 'pk.eyJ1Ijoic3ZlbmtlcnNiZXJnZW4iLCJhIjoiY2wxbWI5ZmdiMGlrczNwbzMzbm4wenFmNyJ9.zVdvr_b4j8uyxeKb-HinDw';
 
+// Api key voor (openWeatherMap) weer
 var openWeatherMapUrl = 'https://api.openweathermap.org/data/2.5/weather';
 var openWeatherMapUrlApiKey = '9efa578c2fa6083cd559fa2801b0824b';
+// Hier word het centrale punt van de kaart bepaald
 var center = [4.325, 52.081];
 
 var map = new mapboxgl.Map({
@@ -19,31 +22,35 @@ var popup = new mapboxgl.Popup().setHTML('<h3 class="popuptext">Landingplaats #1
 var popup2 = new mapboxgl.Popup().setHTML('<h3 class="popuptext">Landingplaats #2</h3>');
 var popup3 = new mapboxgl.Popup().setHTML('<h3 class="popuptext">Landingplaats #3</h3>');
 
-var loungePad1 = [-97.15, 25.99];
-var loungePad2 = [4.325, 52.081];  
-var loungePad3 = [-80.15, 25.75];
+// Hier worden de coordinaten van de landingsplaatsen bepaald
+var landingsPlaats1 = [-97.15, 25.99];
+var landingsPlaats2 = [4.325, 52.081];  
+var landingsPlaats3 = [-80.15, 25.75];
 
+// De landingsplaatsen die op de kaart worden weergegeven
 var marker = new mapboxgl.Marker({
 	color: "purple"})
-  .setLngLat(loungePad1)
+  .setLngLat(landingsPlaats1)
   .setPopup(popup)
   .addTo(map);
 
 var marker2 = new mapboxgl.Marker({
 	color: "yellow"})
-  .setLngLat(loungePad2)
+  .setLngLat(landingsPlaats2)
   .setPopup(popup2)
   .addTo(map);
 
   var marker3 = new mapboxgl.Marker({
   	color: "pink"})
-  .setLngLat(loungePad3)
+  .setLngLat(landingsPlaats3)
   .setPopup(popup3)
   .addTo(map);
 
+
+// Hier worden de knoppen voor de landingsplaatsen werkend gemaakt  
 document.getElementById('knop1').onclick = function() {
 map.flyTo({
-center: loungePad1,
+center: landingsPlaats1,
 speed: 1,
 zoom: 10,
 essential: true
@@ -55,7 +62,7 @@ getWeatherplaats1();
 
 document.getElementById('knop2').onclick = function() {
 map.flyTo({
-center: loungePad2,
+center: landingsPlaats2,
 speed: 1,
 zoom: 10,
 essential: true
@@ -67,7 +74,7 @@ getWeatherplaats2();
 
 document.getElementById('knop3').onclick = function() {
 map.flyTo({
-center: loungePad3,
+center: landingsPlaats3,
 speed: 1,
 zoom: 10,
 essential: true 
@@ -79,7 +86,7 @@ getWeatherplaats3();
 
 function getWeatherplaats1 () {
 
-var request = 'https://api.openweathermap.org/data/2.5/weather?lat=' + loungePad1[1] + '&lon=' + loungePad1[0] + '&appid=0390daa8a38c5a1e9f2ff77491c72abc'
+var request = 'https://api.openweathermap.org/data/2.5/weather?lat=' + landingsPlaats1[1] + '&lon=' + landingsPlaats1[0] + '&appid=0390daa8a38c5a1e9f2ff77491c72abc'
 fetch(request)
 
 .then(function(responseWeather) {
@@ -95,7 +102,7 @@ weatherBox.innerHTML = degC + '&#176;C <br><img src="https://openweathermap.org/
 
 function getWeatherplaats2 () {
 
-var request = 'https://api.openweathermap.org/data/2.5/weather?lat=' + loungePad2[1] + '&lon=' + loungePad2[0] + '&appid=0390daa8a38c5a1e9f2ff77491c72abc'
+var request = 'https://api.openweathermap.org/data/2.5/weather?lat=' + landingsPlaats2[1] + '&lon=' + landingsPlaats2[0] + '&appid=0390daa8a38c5a1e9f2ff77491c72abc'
 fetch(request)
 
 .then(function(responseWeather) {
@@ -111,7 +118,7 @@ weatherBox.innerHTML = degC + '&#176;C <br><img src="https://openweathermap.org/
 
 function getWeatherplaats3 () {
 
-var request = 'https://api.openweathermap.org/data/2.5/weather?lat=' + loungePad3[1] + '&lon=' + loungePad3[0] + '&appid=0390daa8a38c5a1e9f2ff77491c72abc'
+var request = 'https://api.openweathermap.org/data/2.5/weather?lat=' + landingsPlaats3[1] + '&lon=' + landingsPlaats3[0] + '&appid=0390daa8a38c5a1e9f2ff77491c72abc'
 fetch(request)
 
 .then(function(responseWeather) {
